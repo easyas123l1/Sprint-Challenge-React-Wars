@@ -7,18 +7,32 @@ function CharacterPicker() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://swapi.co/api/people/`)
-    .then(result => {
-      setData(result);
-    })
-    .catch(error => {
-      console.log(error);
-    })
-  })
+    // let arr = [];
+    // for (let i = 1; i < 89; i++) {
+      // if (i !== 17) {
+        axios.get(`https://swapi.co/api/people/1/`)
+        .then(result => {
+          // arr.push(result.data);
+          console.log(result.data);
+          setData(result.data);
+        })
+        .catch(error => {
+          console.log(error);
+        })
+      // }
+    // }
+  }, [])
 
   return (
     <div>
-
+      <Character data={data} />
+      {/* {
+      data.map((e, i) => { */}
+        {/* return ( */}
+          {/* <Character data={data} /> */}
+          {/* ) */}
+      {/* })
+      } */}
     </div>
   )
 }
