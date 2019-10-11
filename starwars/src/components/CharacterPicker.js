@@ -31,9 +31,7 @@ function CharacterPicker() {
             tempData.push(arr[0][i]);
           }
         }
-        if (!tryaxios.data.next) {
-          setData(tempData);
-        }
+        setData(tempData);
       }
       catch(error) {
         console.log(error);
